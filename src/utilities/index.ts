@@ -4,4 +4,4 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-export * from './runner/runner.utility'
+export * from './runner.utility'
