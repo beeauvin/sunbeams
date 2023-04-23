@@ -8,7 +8,8 @@ import { Command, CommandRunner } from 'nest-commander'
 import { run } from '../utilities'
 
 @Command({
-  name: 'lint [path]',
+  name: 'lint',
+  arguments: '[path]',
   description: 'ALPHA! linting to brighten your day'
 })
 export class LintCommand extends CommandRunner {

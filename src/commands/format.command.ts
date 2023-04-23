@@ -8,7 +8,8 @@ import { Command, CommandRunner } from 'nest-commander'
 import { run } from '../utilities'
 
 @Command({
-  name: 'format [path]',
+  name: 'format',
+  arguments: '[path]',
   aliases: ['fmt'],
   description: 'ALPHA! formatting to brighten your day'
 })
