@@ -22,8 +22,8 @@
     "start": "node bin/sunbeams",
     "lint": "eslint ./src",
     "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\"",
-    "prepublish": "npm run build",
-    "postpublish": "npm run clean"
+    "prepack": "npm run build",
+    "postpack": "npm run clean"
   },
   "dependencies": {
     "@nestjs/common": "^9.4.0",
