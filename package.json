@@ -19,7 +19,7 @@
     "clean": "ts-node tasks/clean",
     "prebuild": "npm run clean",
     "build": "tsc -p tsconfig.build.json",
-    "start": "node bin/sunbeams",
+    "start": "node dist/sunbeams",
     "lint": "eslint ./src",
     "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\"",
     "prepack": "npm run build",
