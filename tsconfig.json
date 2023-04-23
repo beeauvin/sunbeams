@@ -16,5 +16,5 @@
     "noFallthroughCasesInSwitch": false
   },
   "include": ["src", "tasks"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist"]
 }
