@@ -1,0 +1,43 @@
+{
+  "name": "sunbeams",
+  "version": "0.1.0",
+  "description": "a little something to brightnen your day",
+  "author": "Cassidy Spring <79487947+cassiecascade@users.noreply.github.com>",
+  "license": "MPL-2.0",
+  "homepage": "https://github.com/sunbeamsanctuary/sunbeams#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunbeamsanctuary/sunbeams.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sunbeamsanctuary/sunbeams/issues"
+  },
+  "bin": {
+    "sunbeams": "./dist/sunbeams.js"
+  },
+  "scripts": {
+    "clean": "ts-node tasks/clean",
+    "prebuild": "npm run clean",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node bin/sunbeams",
+    "lint": "eslint ./src",
+    "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\"",
+    "prepublish": "npm run build",
+    "postpublish": "npm run clean"
+  },
+  "dependencies": {
+    "@nestjs/common": "^9.4.0",
+    "nest-commander": "^3.6.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-jest": "^27.2.1",
+    "prettier": "latest",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
