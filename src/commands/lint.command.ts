@@ -15,7 +15,7 @@ import { run } from '../utilities'
 export class LintCommand extends CommandRunner {
   async run(args: string[]): Promise<void> {
     const [path] = args
-    
+
     const include = path ?? '.'
     const exclude = '--ignore-pattern "dist"'
 

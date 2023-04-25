@@ -5,26 +5,15 @@
  */
 
 import { Command, CommandRunner } from 'nest-commander'
-import { run } from '../utilities'
+import { FormatRunner } from '@sunbeams/format'
 
 @Command({
   name: 'format',
-  arguments: '[path]',
   aliases: ['fmt'],
-  description: 'ALPHA! formatting to brighten your day'
+  ...FormatRunner.Metadata
 })
 export class FormatCommand extends CommandRunner {
   async run(args: string[]): Promise<void> {
-    const [path] = args
-    
-    const include = (path != null) ? `"${path}/**/*"` : '"**/*"'
-    const exclude = '"!dist"'
-
-    const write = '--write --ignore-unknown'
-    const formatting = '--no-semi --single-quote --trailing-comma none'
-    const logging = '--loglevel warn'
-
-    const command = `prettier ${include} ${exclude} ${write} ${formatting} ${logging}`
-    await run(command)
+    await new FormatRunner({ path: args[0] }).run()
   }
 }
