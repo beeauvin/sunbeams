@@ -21,16 +21,16 @@
     "build": "tsc -p tsconfig.build.json",
     "start": "node dist/sunbeams",
     "lint": "eslint ./src",
-    "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\"",
+    "format": "sunbeams-format",
     "prepack": "npm run build",
     "postpack": "npm run clean"
   },
   "dependencies": {
     "@nestjs/common": "^9.4.0",
     "@sunbeams/eslint-config": "0.1.0",
+    "@sunbeams/format": "^0.1.0",
     "eslint": "^8.39.0",
-    "nest-commander": "^3.6.2",
-    "prettier": "^2.8.8"
+    "nest-commander": "^3.6.2"
   },
   "devDependencies": {
     "ts-node": "^10.9.1",
