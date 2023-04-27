@@ -5,7 +5,10 @@
  */
 
 import { Command } from 'nest-commander'
-import { FormatCommand as FormatCommandBase, FormatRunner } from '@sunbeams/format'
+import {
+  FormatCommand as FormatCommandBase,
+  FormatRunner
+} from '@sunbeams/format'
 
 @Command({
   name: 'format',
