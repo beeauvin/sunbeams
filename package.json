@@ -28,7 +28,7 @@
   "dependencies": {
     "@nestjs/common": "^9.4.0",
     "@sunbeams/eslint-config": "0.1.0",
-    "@sunbeams/format": "^0.1.0",
+    "@sunbeams/format": "^0.2.0",
     "eslint": "^8.39.0",
     "nest-commander": "^3.6.2"
   },
