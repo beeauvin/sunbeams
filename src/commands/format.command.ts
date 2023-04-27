@@ -4,22 +4,12 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Command, CommandRunner, Option } from 'nest-commander'
-import { FormatRunner } from '@sunbeams/format'
-import type { FormatRunnerFlagValues } from '@sunbeams/format'
+import { Command } from 'nest-commander'
+import { FormatCommand as FormatCommandBase, FormatRunner } from '@sunbeams/format'
 
 @Command({
   name: 'format',
   aliases: ['fmt'],
   ...FormatRunner.Metadata
 })
-export class FormatCommand extends CommandRunner {
-  async run(args: string[], options: FormatRunnerFlagValues): Promise<void> {
-    await new FormatRunner({ path: args[0], ...options }).run()
-  }
-
-  @Option(FormatRunner.Flags.Check)
-  check(value: boolean): boolean {
-    return value
-  }
-}
+export class FormatCommand extends FormatCommandBase {}
