@@ -4,25 +4,11 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Command, CommandRunner } from 'nest-commander'
-import { run } from '../utilities'
+import { Command } from 'nest-commander'
+import { LintCommand as LintCommandBase, LintRunner } from '@sunbeams/lint'
 
 @Command({
   name: 'lint',
-  arguments: '[path]',
-  description: 'ALPHA! linting to brighten your day'
+  ...LintRunner.Metadata
 })
-export class LintCommand extends CommandRunner {
-  async run(args: string[]): Promise<void> {
-    const [path] = args
-
-    const include = path ?? '.'
-    const exclude = '--ignore-pattern "dist"'
-
-    const color = '--color'
-    const config = '--config ./node_modules/sunbeams/.eslintrc.js'
-
-    const command = `eslint ${include} ${exclude} ${color} ${config}`
-    await run(command)
-  }
-}
+export class LintCommand extends LintCommandBase {}
