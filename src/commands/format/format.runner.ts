@@ -36,7 +36,7 @@ export class FormatRunner {
   public async run(): Promise<void> {
     const { path: inputPath, check } = this.options
 
-    if (inputPath != null && validator.isAscii(inputPath) !== true) {
+    if (inputPath != null && !validator.isAscii(inputPath)) {
       throw new Error('invalid path provided')
     }
 

@@ -4,11 +4,12 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+import { LintCommand } from './lint.command'
+import { LintRunner } from './lint.runner'
 import { Command } from 'nest-commander'
-import { LintCommand as LintCommandBase, LintRunner } from '@sunbeams/lint'
 
 @Command({
   name: 'lint',
   ...LintRunner.Metadata
 })
-export class LintCommand extends LintCommandBase {}
+export class LintCommandProvider extends LintCommand {}
