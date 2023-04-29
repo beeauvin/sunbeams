@@ -9,13 +9,13 @@ import { DefaultCommand } from './default.command'
 import { HappyCommand } from './happy.command'
 import { SunshineCommand } from './sunshine.command'
 import { LintCommand } from './lint.command'
-import { FormatCommand } from './format.command'
+import { FormatCommandProvider } from './format/format.provider'
 
 @Module({
   providers: [
     DefaultCommand,
     LintCommand,
-    FormatCommand,
+    FormatCommandProvider,
     HappyCommand,
     SunshineCommand
   ]
