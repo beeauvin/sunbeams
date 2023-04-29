@@ -4,15 +4,13 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+import { FormatCommand } from './format.command'
+import { FormatRunner } from './format.runner'
 import { Command } from 'nest-commander'
-import {
-  FormatCommand as FormatCommandBase,
-  FormatRunner
-} from '@sunbeams/format'
 
 @Command({
   name: 'format',
   aliases: ['fmt'],
   ...FormatRunner.Metadata
 })
-export class FormatCommand extends FormatCommandBase {}
+export class FormatCommandProvider extends FormatCommand {}
