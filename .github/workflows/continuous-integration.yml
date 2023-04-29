@@ -1,0 +1,74 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+name: continuous integration
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_ENV: test
+
+jobs:
+  format:
+    name: check formatting
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: setup
+        uses: ./.github/actions/setup
+
+      - name: format
+        run: npm run format -- --check
+
+  lint:
+    name: lint code
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: setup
+        uses: ./.github/actions/setup
+
+      - name: lint
+        run: npm run lint
+  
+  build:
+    name: build code
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: setup
+        uses: ./.github/actions/setup
+
+      - name: build
+        run: npm run build
+
+  unit:
+    name: unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: setup
+        uses: ./.github/actions/setup
+
+      - name: test
+        run: npm run test:coverage
+
+      - name: coverage reports
+        uses: codecov/codecov-action@v3
