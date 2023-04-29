@@ -8,13 +8,13 @@ import { Module } from '@nestjs/common'
 import { DefaultCommand } from './default.command'
 import { HappyCommand } from './happy.command'
 import { SunshineCommand } from './sunshine.command'
-import { LintCommand } from './lint.command'
 import { FormatCommandProvider } from './format/format.provider'
+import { LintCommandProvider } from './lint/lint.provider'
 
 @Module({
   providers: [
     DefaultCommand,
-    LintCommand,
+    LintCommandProvider,
     FormatCommandProvider,
     HappyCommand,
     SunshineCommand
