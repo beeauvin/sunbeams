@@ -11,9 +11,7 @@ import type { Provider } from '@nestjs/common'
 describe('FormatModule', () => {
   it('registers the FormatCommand', () => {
     const providers = Reflect.getMetadata('providers', FormatModule)
-    const isRegistered = providers.some(
-      (provider: Provider) => provider === FormatCommand
-    )
+    const isRegistered = providers.some((provider: Provider) => provider === FormatCommand)
 
     expect(isRegistered).toBe(true)
   })

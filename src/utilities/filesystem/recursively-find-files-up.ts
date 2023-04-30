@@ -14,6 +14,5 @@ export function recursivelyFindFilesUp(
   const files = findFilesInDirectory(filesToSearch, directory)
   if (files.length > 0) return { files, directory }
   else if (directory === root) return { files: [], directory: root }
-  else
-    return recursivelyFindFilesUp(filesToSearch, path.dirname(directory), root)
+  else return recursivelyFindFilesUp(filesToSearch, path.dirname(directory), root)
 }

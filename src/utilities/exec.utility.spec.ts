@@ -21,9 +21,7 @@ describe('ExecUtility', () => {
 
     it('should set the error message in the ExecError object', async () => {
       const command = 'this-command-does-not-exist /dev/null'
-      const expectedError = new ExecError(
-        'spawn this-command-does-not-exist /dev/null ENOENT'
-      )
+      const expectedError = new ExecError('spawn this-command-does-not-exist /dev/null ENOENT')
       await expect(exec(command)).rejects.toEqual(expectedError)
     })
   })

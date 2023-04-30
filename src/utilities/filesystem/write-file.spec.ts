@@ -29,11 +29,7 @@ describe('writeFile', () => {
     const result = await writeFile(directory, filename, data)
 
     expect(path.join).toHaveBeenCalledWith(directory, filename)
-    expect(fs.promises.writeFile).toHaveBeenCalledWith(
-      `${directory}/${filename}`,
-      data,
-      'utf-8'
-    )
+    expect(fs.promises.writeFile).toHaveBeenCalledWith(`${directory}/${filename}`, data, 'utf-8')
     expect(result).toBe(true)
   })
 
@@ -44,11 +40,7 @@ describe('writeFile', () => {
     const result = await writeFile(directory, filename, data)
 
     expect(path.join).toHaveBeenCalledWith(directory, filename)
-    expect(fs.promises.writeFile).toHaveBeenCalledWith(
-      `${directory}/${filename}`,
-      data,
-      'utf-8'
-    )
+    expect(fs.promises.writeFile).toHaveBeenCalledWith(`${directory}/${filename}`, data, 'utf-8')
     expect(result).toBeInstanceOf(Error)
     expect(result).toEqual(error)
   })
