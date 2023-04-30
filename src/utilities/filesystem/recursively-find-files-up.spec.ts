@@ -8,20 +8,14 @@ jest.mock('./find-files-in-directory', () => ({
 }))
 
 describe('recursivelyFindFilesUp', () => {
-  const findFilesInDirectoryMock = findFilesInDirectory as jest.MockedFunction<
-    typeof findFilesInDirectory
-  >
+  const findFilesInDirectoryMock = findFilesInDirectory as jest.MockedFunction<typeof findFilesInDirectory>
   const startDirectory = '/example/start'
   const parentDirectory = '/example'
   const rootDirectory = '/'
   const fileToSearch = 'target.txt'
 
   beforeEach(() => {
-    jest
-      .spyOn(path, 'dirname')
-      .mockImplementation((dir) =>
-        dir === startDirectory ? rootDirectory : dir
-      )
+    jest.spyOn(path, 'dirname').mockImplementation((dir) => (dir === startDirectory ? rootDirectory : dir))
     jest.spyOn(path, 'resolve').mockReturnValue(rootDirectory)
   })
 
@@ -35,22 +29,13 @@ describe('recursivelyFindFilesUp', () => {
     const result = recursivelyFindFilesUp([fileToSearch], startDirectory)
 
     expect(result).toEqual({ files: [fileToSearch], directory: startDirectory })
-    expect(findFilesInDirectoryMock).toHaveBeenCalledWith(
-      [fileToSearch],
-      startDirectory
-    )
+    expect(findFilesInDirectoryMock).toHaveBeenCalledWith([fileToSearch], startDirectory)
     expect(path.dirname).not.toHaveBeenCalled()
   })
 
   it('should find files in a parent directory', () => {
-    findFilesInDirectoryMock
-      .mockReturnValueOnce([])
-      .mockReturnValueOnce([fileToSearch])
-    jest
-      .spyOn(path, 'dirname')
-      .mockImplementation((dir) =>
-        dir === startDirectory ? parentDirectory : rootDirectory
-      )
+    findFilesInDirectoryMock.mockReturnValueOnce([]).mockReturnValueOnce([fileToSearch])
+    jest.spyOn(path, 'dirname').mockImplementation((dir) => (dir === startDirectory ? parentDirectory : rootDirectory))
 
     const result = recursivelyFindFilesUp([fileToSearch], startDirectory)
 
@@ -58,14 +43,8 @@ describe('recursivelyFindFilesUp', () => {
       files: [fileToSearch],
       directory: parentDirectory
     })
-    expect(findFilesInDirectoryMock).toHaveBeenCalledWith(
-      [fileToSearch],
-      startDirectory
-    )
-    expect(findFilesInDirectoryMock).toHaveBeenCalledWith(
-      [fileToSearch],
-      parentDirectory
-    )
+    expect(findFilesInDirectoryMock).toHaveBeenCalledWith([fileToSearch], startDirectory)
+    expect(findFilesInDirectoryMock).toHaveBeenCalledWith([fileToSearch], parentDirectory)
     expect(path.dirname).toHaveBeenCalledWith(startDirectory)
   })
 
@@ -75,10 +54,7 @@ describe('recursivelyFindFilesUp', () => {
     const result = recursivelyFindFilesUp([fileToSearch], startDirectory)
 
     expect(result).toEqual({ files: [], directory: rootDirectory })
-    expect(findFilesInDirectoryMock).toHaveBeenCalledWith(
-      [fileToSearch],
-      startDirectory
-    )
+    expect(findFilesInDirectoryMock).toHaveBeenCalledWith([fileToSearch], startDirectory)
     expect(path.dirname).toHaveBeenCalledWith(startDirectory)
   })
 })

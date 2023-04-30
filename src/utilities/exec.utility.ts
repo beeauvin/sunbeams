@@ -8,10 +8,7 @@ import { execFile as cmd } from 'child_process'
 
 export class ExecError extends Error {}
 
-export async function exec(
-  command: string,
-  args: string[] = []
-): Promise<string> {
+export async function exec(command: string, args: string[] = []): Promise<string> {
   return await new Promise<string>((resolve, reject) => {
     cmd(command, args, (error, stdout) => {
       if (error != null) {
