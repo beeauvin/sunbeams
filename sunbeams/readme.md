@@ -8,8 +8,8 @@
   <a href="https://www.npmjs.com/package/sunbeams" target="_blank"><img src="https://img.shields.io/npm/v/sunbeams.svg" alt="NPM Version" /></a>
   <a href="https://www.npmjs.com/package/sunbeams" target="_blank"><img src="https://img.shields.io/npm/l/sunbeams.svg" alt="Package License" /></a>
   <a href="https://www.npmjs.com/package/sunbeams" target="_blank"><img src="https://img.shields.io/npm/dm/sunbeams.svg" alt="NPM Downloads" /></a>
-  <a href="https://github.com/sunbeamsanctuary/sunbeams/actions/workflows/continuous-integration.yml" target="_blank"><img src="https://github.com/sunbeamsanctuary/sunbeams/actions/workflows/continuous-integration.yml/badge.svg" alt="continuous integration" /></a>
-  <a href="https://codecov.io/gh/sunbeamsanctuary/sunbeams"><img src="https://codecov.io/gh/sunbeamsanctuary/sunbeams/branch/main/graph/badge.svg?token=QEFG237PBK"/></a>
+  <a href="https://github.com/cassiecascade/sunbeams/actions/workflows/continuous-integration.yml" target="_blank"><img src="https://github.com/cassiecascade/sunbeams/actions/workflows/continuous-integration.yml/badge.svg" alt="continuous integration" /></a>
+  <a href="https://codecov.io/gh/cassiecascade/sunbeams"><img src="https://codecov.io/gh/cassiecascade/sunbeams/branch/main/graph/badge.svg?token=QEFG237PBK"/></a>
 </p>
 
 # Sunbeams
