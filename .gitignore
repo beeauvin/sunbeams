@@ -17,3 +17,6 @@ npm-debug.log*
 # env
 .env
 .env.local
+
+# turbo
+.turbo

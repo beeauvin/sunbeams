@@ -1,16 +1,16 @@
 {
   "name": "@sunbeams/eslint-config",
-  "version": "0.1.2",
+  "version": "0.5.5",
   "description": "eslint to brighten your day",
   "author": "Cassidy Spring <79487947+cassiecascade@users.noreply.github.com>",
   "license": "MPL-2.0",
-  "homepage": "https://github.com/sunbeamsanctuary/sunbeams/packages/eslint-config#readme",
+  "homepage": "https://github.com/cassiecascade/sunbeams/packages/eslint-config#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sunbeamsanctuary/sunbeams.git"
+    "url": "git+https://github.com/cassiecascade/sunbeams.git"
   },
   "bugs": {
-    "url": "https://github.com/sunbeamsanctuary/sunbeams/issues"
+    "url": "https://github.com/cassiecascade/sunbeams/issues"
   },
   "main": "./index.js",
   "scripts": {

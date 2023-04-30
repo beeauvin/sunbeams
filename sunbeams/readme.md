@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../media/sunbeams-logo-cropped.png" width="100" alt="sunbeams logo" />
+  <img src="./media/sunbeams-logo-cropped.png" width="100" alt="sunbeams logo" />
 </p>
 
 <p align="center">a little something to brighten your day</p>
