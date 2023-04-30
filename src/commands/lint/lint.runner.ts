@@ -38,10 +38,10 @@ export class LintRunner {
     const config = ['--config', configPath]
     const color = '--color'
 
-    const args = [directory, ...exclude, ...config, color]
+    const args = ['eslint', directory, ...exclude, ...config, color]
 
     if (fix === true) args.push('--fix')
 
-    await exec('eslint', args)
+    await exec('npx', args)
   }
 }
