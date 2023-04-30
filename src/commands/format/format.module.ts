@@ -4,8 +4,8 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { FormatCommandProvider } from './format.provider'
+import { FormatCommand } from './format.command'
 import { Module } from '@nestjs/common'
 
-@Module({ providers: [FormatCommandProvider] })
+@Module({ providers: [FormatCommand] })
 export class FormatModule {}

@@ -4,11 +4,16 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { CommandRunner, Option } from 'nest-commander'
+import { Command, CommandRunner, Option } from 'nest-commander'
 
 import { FormatRunner } from './format.runner'
 import type { FormatRunnerFlagValues } from './format.runner'
 
+@Command({
+  name: 'format',
+  aliases: ['fmt'],
+  ...FormatRunner.Metadata
+})
 export class FormatCommand extends CommandRunner {
   async run(args: string[], options: FormatRunnerFlagValues): Promise<void> {
     try {

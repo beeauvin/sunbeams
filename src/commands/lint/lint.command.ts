@@ -4,11 +4,15 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { CommandRunner, Option } from 'nest-commander'
+import { Command, CommandRunner, Option } from 'nest-commander'
 
 import { LintRunner } from './lint.runner'
 import type { LintRunnerFlagValues } from './lint.runner'
 
+@Command({
+  name: 'lint',
+  ...LintRunner.Metadata
+})
 export class LintCommand extends CommandRunner {
   async run(args: string[], options: LintRunnerFlagValues): Promise<void> {
     try {

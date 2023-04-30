@@ -4,15 +4,15 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { FormatCommandProvider } from './format.provider'
+import { FormatCommand } from './format.command'
 import { FormatModule } from './format.module'
 import type { Provider } from '@nestjs/common'
 
 describe('FormatModule', () => {
-  it('registers the FormatCommandProvider', () => {
+  it('registers the FormatCommand', () => {
     const providers = Reflect.getMetadata('providers', FormatModule)
     const isRegistered = providers.some(
-      (provider: Provider) => provider === FormatCommandProvider
+      (provider: Provider) => provider === FormatCommand
     )
 
     expect(isRegistered).toBe(true)

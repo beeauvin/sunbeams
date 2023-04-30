@@ -6,7 +6,7 @@
 
 import * as path from 'path'
 
-import { exec } from './format.exec'
+import { exec } from '../../utilities/exec.utility'
 import validator from 'validator'
 
 export interface FormatRunnerFlagValues {
