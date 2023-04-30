@@ -52,7 +52,9 @@ export class FormatRunner {
       '--no-semi',
       '--single-quote',
       '--trailing-comma',
-      'none'
+      'none',
+      '--print-width',
+      '120'
     ]
     const logging = ['--loglevel', 'warn']
 

@@ -13,6 +13,8 @@ const CONSTANT_SETTINGS = [
   '--single-quote',
   '--trailing-comma',
   'none',
+  '--print-width',
+  '120',
   '--loglevel',
   'warn'
 ]
