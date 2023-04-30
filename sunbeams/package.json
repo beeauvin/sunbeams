@@ -1,0 +1,81 @@
+{
+  "name": "sunbeams",
+  "version": "0.5.3",
+  "description": "a little something to brighten your day",
+  "author": "Cassidy Spring <79487947+cassiecascade@users.noreply.github.com>",
+  "license": "MPL-2.0",
+  "homepage": "https://github.com/sunbeamsanctuary/sunbeams#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunbeamsanctuary/sunbeams.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sunbeamsanctuary/sunbeams/issues"
+  },
+  "bin": {
+    "sunbeams": "./dist/sunbeams.js"
+  },
+  "scripts": {
+    "clean": "ts-node tasks/clean",
+    "prebuild": "npm run clean",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/sunbeams",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "ts-node src/sunbeams.ts lint",
+    "format": "ts-node src/sunbeams.ts format",
+    "prepack": "npm run build",
+    "postpack": "npm run clean"
+  },
+  "peerDependencies": {
+    "@sunbeams/eslint-config": "0.1.2",
+    "eslint": "8.39.0",
+    "prettier": "2.8.8"
+  },
+  "dependencies": {
+    "@nestjs/common": "^9.4.0",
+    "nest-commander": "^3.6.2",
+    "validator": "^13.9.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.1",
+    "@types/validator": "^13.7.15",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": ".",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "./coverage",
+    "coveragePathIgnorePatterns": [
+      "/src/sunbeams.ts",
+      "/tasks/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 30,
+        "functions": 30,
+        "lines": 30,
+        "statements": 30
+      }
+    },
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/src/"
+    ]
+  }
+}
