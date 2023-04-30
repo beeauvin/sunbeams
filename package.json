@@ -28,9 +28,11 @@
     "prepack": "npm run build",
     "postpack": "npm run clean"
   },
+  "peerDependencies": {
+    "@sunbeams/eslint-config": "^0.1.0"
+  },
   "dependencies": {
     "@nestjs/common": "^9.4.0",
-    "@sunbeams/eslint-config": "^0.1.0",
     "eslint": "^8.39.0",
     "nest-commander": "^3.6.2",
     "prettier": "^2.8.8",
