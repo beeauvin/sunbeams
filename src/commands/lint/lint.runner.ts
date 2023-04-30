@@ -5,7 +5,7 @@
  */
 
 import { createEslintConfigIfNeeded } from './lint.fs'
-import { exec } from './lint.exec'
+import { exec } from '../../utilities/exec.utility'
 
 export interface LintRunnerFlagValues {
   fix: boolean
@@ -34,12 +34,14 @@ export class LintRunner {
 
     const { configPath, directory } = await createEslintConfigIfNeeded()
 
-    const exclude = '--ignore-pattern "dist"'
-    const config = `--config ${configPath}`
-    const attemptFix = fix === true ? '--fix' : ''
+    const exclude = ['--ignore-pattern', 'dist']
+    const config = ['--config', configPath]
     const color = '--color'
 
-    const command = `eslint ${directory} ${exclude} ${config} ${attemptFix} ${color}`
-    await exec(command)
+    const args = [directory, ...exclude, ...config, color]
+
+    if (fix === true) args.push('--fix')
+
+    await exec('eslint', args)
   }
 }

@@ -4,8 +4,8 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { LintCommandProvider } from './lint.provider'
+import { LintCommand } from './lint.command'
 import { Module } from '@nestjs/common'
 
-@Module({ providers: [LintCommandProvider] })
+@Module({ providers: [LintCommand] })
 export class LintModule {}

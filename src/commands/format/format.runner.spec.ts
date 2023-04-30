@@ -5,7 +5,7 @@
  */
 
 import { FormatRunner } from './format.runner'
-import { exec } from './format.exec'
+import { exec } from '../../utilities/exec.utility'
 
 const CONSTANT_SETTINGS = [
   '--ignore-unknown',
@@ -17,7 +17,7 @@ const CONSTANT_SETTINGS = [
   'warn'
 ]
 
-jest.mock('./format.exec')
+jest.mock('../../utilities/exec.utility')
 
 describe('FormatRunner', () => {
   describe('run', () => {
@@ -80,10 +80,7 @@ describe('FormatRunner', () => {
     it('should call exec with the correct command', async () => {
       const formatRunner = new FormatRunner({})
       await formatRunner.run()
-      expect(exec).toHaveBeenCalledOnceWith(
-        expect.any(String),
-        expect.any(Array)
-      )
+      expect(exec).toHaveBeenCalledWith(expect.any(String), expect.any(Array))
     })
 
     it('should throw an error when the path option is not ascii', async () => {

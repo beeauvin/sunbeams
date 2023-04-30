@@ -4,11 +4,9 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import 'jest-extended'
+import { ExecError, exec } from './exec.utility'
 
-import { ExecError, exec } from './format.exec'
-
-describe('FormatExec', () => {
+describe('ExecUtility', () => {
   describe('exec', () => {
     it('should execute command and resolve with stdout', async () => {
       const command = 'echo'

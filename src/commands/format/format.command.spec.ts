@@ -6,10 +6,15 @@
 
 import { FormatCommand } from './format.command'
 import { FormatRunner } from './format.runner'
+import { CommandRunner } from 'nest-commander'
 
 jest.mock('./format.runner')
 
 describe('FormatCommand', () => {
+  it('extends CommandRunner', () => {
+    expect(FormatCommand.prototype instanceof CommandRunner).toBe(true)
+  })
+
   describe('run', () => {
     const args = ['path/to/file']
     const options = { check: true }

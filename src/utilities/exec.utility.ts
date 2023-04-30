@@ -15,7 +15,8 @@ export async function exec(
   return await new Promise<string>((resolve, reject) => {
     cmd(command, args, (error, stdout) => {
       if (error != null) {
-        reject(new ExecError(error.message))
+        if (stdout != null && stdout !== '') reject(stdout)
+        else reject(new ExecError(error.message))
       } else {
         resolve(stdout)
       }
