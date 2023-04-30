@@ -25,6 +25,7 @@
     "test:coverage": "jest --coverage",
     "lint": "ts-node src/sunbeams.ts lint",
     "format": "ts-node src/sunbeams.ts format",
+    "format:check": "ts-node src/sunbeams.ts format --check",
     "prepack": "npm run build",
     "postpack": "npm run clean"
   },
