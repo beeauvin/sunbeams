@@ -2,7 +2,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-name: continuous integration
+name: ☀️
 
 on:
   push:
@@ -11,64 +11,27 @@ on:
     branches: [main]
 
 concurrency:
-  group: check-${{ github.ref }}
+  group: continuous-integration-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  NODE_ENV: test
-
 jobs:
-  format:
-    name: check formatting
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3
-
-      - name: setup
-        uses: ./.github/actions/setup
-
-      - name: format
-        run: npm run format:check
-
-  lint:
-    name: lint code
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3
-
-      - name: setup
-        uses: ./.github/actions/setup
-
-      - name: lint
-        run: npm run lint
+  check:
+    name: /
+    uses: cassiecascade/houseplant/.github/workflows/check.yml@main
+  
+  test:
+    name: /
+    uses: cassiecascade/houseplant/.github/workflows/test.yml@main
 
   build:
-    name: build code
+    name: /
+    uses: cassiecascade/houseplant/.github/workflows/build.yml@main
+
+  coverage:
+    name: coverage
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
-
-      - name: setup
-        uses: ./.github/actions/setup
-
-      - name: build
-        run: npm run build
-
-  unit:
-    name: unit tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3
-
-      - name: setup
-        uses: ./.github/actions/setup
-
-      - name: test
-        run: npm run test:coverage
-
-      - name: coverage reports
-        uses: codecov/codecov-action@v3
+      - uses: actions/checkout@v3
+      - uses: cassiecascade/houseplant/.github/actions/install@main
+      - run: npm run test:unit
+      - uses: codecov/codecov-action@v3

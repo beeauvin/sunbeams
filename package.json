@@ -2,16 +2,19 @@
   "name": "root",
   "private": true,
   "workspaces": [
-    "sunbeams"
+    "sunbeams",
+    "packages/*"
   ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "check:lint": "turbo run check:lint",
     "format": "turbo run format",
-    "format:check": "turbo run format:check",
+    "check:format": "turbo run check:format",
     "test": "turbo run test",
-    "test:coverage": "turbo run test:coverage"
+    "test:unit": "turbo run test:unit",
+    "test:e2e": "turbo run test:e2e"
   },
   "devDependencies": {
     "turbo": "latest"

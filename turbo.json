@@ -5,16 +5,22 @@
     "lint": {
       "cache": false
     },
+    "check:lint": {
+      "cache": false
+    },
     "format": {
       "cache": false
     },
-    "format:check": {
+    "check:format": {
       "cache": false
     },
     "test": {
       "cache": false
     },
-    "test:coverage": {
+    "test:unit": {
+      "cache": false
+    },
+    "test:e2e": {
       "cache": false
     }
   }
