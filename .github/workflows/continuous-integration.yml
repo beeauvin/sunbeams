@@ -23,6 +23,10 @@ jobs:
     name: /
     uses: cassiecascade/houseplant/.github/workflows/build.yml@main
 
+  tests:
+    name: /
+    uses: cassiecascade/houseplant/.github/workflows/tests.yml@main
+
   unit:
     name: unit tests
     runs-on: ubuntu-latest
@@ -34,7 +38,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: test
-        run: npm run test:coverage
+        run: npm run test:unit
 
       - name: coverage reports
         uses: codecov/codecov-action@v3

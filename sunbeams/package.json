@@ -22,7 +22,7 @@
     "start": "node dist/sunbeams",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
+    "test:unit": "jest --coverage",
     "lint": "ts-node src/sunbeams.ts lint --fix",
     "check:lint": "ts-node src/sunbeams.ts lint",
     "format": "ts-node src/sunbeams.ts format",
