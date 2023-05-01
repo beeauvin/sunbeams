@@ -20,17 +20,8 @@ jobs:
     uses: cassiecascade/houseplant/.github/workflows/check.yml@main
 
   build:
-    name: build code
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3
-
-      - name: setup
-        uses: ./.github/actions/setup
-
-      - name: build
-        run: npm run build
+    name: /
+    uses: cassiecascade/houseplant/.github/workflows/build.yml@main
 
   unit:
     name: unit tests
