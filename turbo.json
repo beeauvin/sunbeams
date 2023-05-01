@@ -5,10 +5,13 @@
     "lint": {
       "cache": false
     },
+    "check:lint": {
+      "cache": false
+    },
     "format": {
       "cache": false
     },
-    "format:check": {
+    "check:format": {
       "cache": false
     },
     "test": {
