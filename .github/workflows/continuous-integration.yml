@@ -26,17 +26,12 @@ jobs:
   build:
     name: /
     uses: cassiecascade/houseplant/.github/workflows/build.yml@main
-  
-  coverage:
-    name: /
-    uses: codecov/codecov-action/action.yml@v3
-    needs: test
 
-  # coverage:
-  #   name: coverage
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - uses: cassiecascade/houseplant/.github/actions/install@main
-  #     - run: npm run test:unit
-  #     - uses: codecov/codecov-action@v3
+  coverage:
+    name: coverage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cassiecascade/houseplant/.github/actions/install@main
+      - run: npm run test:unit
+      - uses: codecov/codecov-action@v3
