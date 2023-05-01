@@ -23,9 +23,9 @@ jobs:
     name: /
     uses: cassiecascade/houseplant/.github/workflows/build.yml@main
 
-  tests:
+  test:
     name: /
-    uses: cassiecascade/houseplant/.github/workflows/tests.yml@main
+    uses: cassiecascade/houseplant/.github/workflows/test.yml@main
 
   unit:
     name: unit tests
