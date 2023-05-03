@@ -41,13 +41,13 @@ export class FormatRunner {
     }
 
     const include = inputPath != null ? `${path.normalize(inputPath)}/**/*` : '**/*'
-    const exclude = '!dist'
+    const exclude = ['!dist', '!coverage']
 
     const write = [`--${check === true ? 'check' : 'write'}`, '--ignore-unknown']
     const formatting = ['--no-semi', '--single-quote', '--trailing-comma', 'none', '--print-width', '120']
     const logging = ['--loglevel', 'warn']
 
-    const args = ['prettier', include, exclude, ...write, ...formatting, ...logging]
+    const args = ['prettier', include, ...exclude, ...write, ...formatting, ...logging]
     await exec('npx', args)
   }
 }
