@@ -29,28 +29,28 @@ describe('FormatRunner', () => {
 
     it('should generate the correct command when no options are provided', async () => {
       const formatRunner = new FormatRunner({})
-      const expectedArgs = ['prettier', '**/*', '!dist', '--write', ...CONSTANT_SETTINGS]
+      const expectedArgs = ['prettier', '**/*', '!dist', '!coverage', '--write', ...CONSTANT_SETTINGS]
       await formatRunner.run()
       expect(exec).toHaveBeenCalledWith('npx', expectedArgs)
     })
 
     it('should generate the correct command when the path option is provided', async () => {
       const formatRunner = new FormatRunner({ path: 'src' })
-      const expectedArgs = ['prettier', 'src/**/*', '!dist', '--write', ...CONSTANT_SETTINGS]
+      const expectedArgs = ['prettier', 'src/**/*', '!dist', '!coverage', '--write', ...CONSTANT_SETTINGS]
       await formatRunner.run()
       expect(exec).toHaveBeenCalledWith('npx', expectedArgs)
     })
 
     it('should generate the correct command when the check option is set to true', async () => {
       const formatRunner = new FormatRunner({ check: true })
-      const expectedArgs = ['prettier', '**/*', '!dist', '--check', ...CONSTANT_SETTINGS]
+      const expectedArgs = ['prettier', '**/*', '!dist', '!coverage', '--check', ...CONSTANT_SETTINGS]
       await formatRunner.run()
       expect(exec).toHaveBeenCalledWith('npx', expectedArgs)
     })
 
     it('should generate the correct command when both the path and check options are provided', async () => {
       const formatRunner = new FormatRunner({ path: 'src', check: true })
-      const expectedArgs = ['prettier', 'src/**/*', '!dist', '--check', ...CONSTANT_SETTINGS]
+      const expectedArgs = ['prettier', 'src/**/*', '!dist', '!coverage', '--check', ...CONSTANT_SETTINGS]
       await formatRunner.run()
       expect(exec).toHaveBeenCalledWith('npx', expectedArgs)
     })
