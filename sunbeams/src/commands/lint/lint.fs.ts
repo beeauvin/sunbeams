@@ -18,7 +18,9 @@ export async function createEslintConfigIfNeeded(): Promise<ConfigCreateResponse
   const { files, directory } = recursivelyFindFilesUp(filesToSearch, process.cwd())
   if (files.length === 0) throw new Error(`no package.json or .eslintrc file found, checked up to: ${process.cwd()}`)
 
-  const existingConfig = files.find((file) => file.endsWith('.eslintrc') || file.endsWith('.eslintrc.js'))
+  const existingConfig = files.find(
+    (file) => file.endsWith('.eslintrc') || file.endsWith('.eslintrc.js') || file.endsWith('.eslintrc.cjs')
+  )
   if (existingConfig !== undefined) return { configPath: existingConfig, directory }
 
   const hasPackageJson = files.some((file) => file.endsWith('package.json'))
