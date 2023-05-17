@@ -5,6 +5,7 @@
  */
 
 import * as path from 'path'
+
 import { recursivelyFindFilesUp, writeFile } from '../../utilities/filesystem'
 
 interface ConfigCreateResponse {
@@ -13,7 +14,7 @@ interface ConfigCreateResponse {
 }
 
 export async function createEslintConfigIfNeeded(): Promise<ConfigCreateResponse> {
-  const filesToSearch = ['package.json', '.eslintrc', '.eslintrc.js']
+  const filesToSearch = ['package.json', '.eslintrc', '.eslintrc.js', '.eslintrc.cjs']
   const { files, directory } = recursivelyFindFilesUp(filesToSearch, process.cwd())
   if (files.length === 0) throw new Error(`no package.json or .eslintrc file found, checked up to: ${process.cwd()}`)
 
