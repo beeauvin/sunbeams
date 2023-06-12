@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^9.4.0",
-    "nest-commander": "^3.7.1",
+    "nest-commander": "^3.8.0",
     "validator": "^13.9.0"
   },
   "devDependencies": {
