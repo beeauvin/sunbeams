@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@sunbeams'],
+  extends: ['@cascadeplus'],
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
