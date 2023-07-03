@@ -19,6 +19,6 @@ export class DefaultCommand extends CommandRunner {
 
   @Option({ flags: '-v, --version', description: 'outputs the version number' })
   version(): string {
-    return 'v0.0.0'
+    return 'v0.6.0'
   }
 }

@@ -15,23 +15,26 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  check:
-    name: /
-    uses: cassiecascade/houseplant/.github/workflows/check.yml@main
+  format:
+    uses: cascadeplus/cascade/.github/workflows/run.yml@main
+    with:
+      command: format:check
 
-  test:
-    name: /
-    uses: cassiecascade/houseplant/.github/workflows/test.yml@main
+  lint:
+    uses: cascadeplus/cascade/.github/workflows/run.yml@main
+    with:
+      command: lint:check
 
   build:
-    name: /
-    uses: cassiecascade/houseplant/.github/workflows/build.yml@main
+    uses: cascadeplus/cascade/.github/workflows/run.yml@main
+    with:
+      command: build
 
   coverage:
     name: coverage
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: cassiecascade/houseplant/.github/actions/install@main
+      - uses: cascadeplus/cascade/.github/actions/install@main
       - run: npm run test:unit
       - uses: codecov/codecov-action@v3
