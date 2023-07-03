@@ -18,7 +18,7 @@ jobs:
   check:
     name: /
     uses: cassiecascade/houseplant/.github/workflows/check.yml@main
-  
+
   test:
     name: /
     uses: cassiecascade/houseplant/.github/workflows/test.yml@main
