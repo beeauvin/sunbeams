@@ -31,7 +31,7 @@
     "postpack": "npm run clean"
   },
   "peerDependencies": {
-    "@sunbeams/eslint-config": "0.1.2",
+    "@cascadeplus/eslint-config": "1.0.0",
     "eslint": "8.39.0",
     "prettier": "2.8.8"
   },
