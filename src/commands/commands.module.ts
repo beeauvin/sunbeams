@@ -8,11 +8,8 @@ import { Module } from '@nestjs/common'
 import { DefaultCommand } from './default.command'
 import { HappyCommand } from './happy.command'
 import { SunshineCommand } from './sunshine.command'
-import { FormatModule } from './format/format.module'
-import { LintModule } from './lint/lint.module'
 
 @Module({
-  imports: [FormatModule, LintModule],
   providers: [DefaultCommand, HappyCommand, SunshineCommand]
 })
 export class CommandsModule {}
