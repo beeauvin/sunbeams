@@ -1,12 +1,8 @@
 module.exports = {
-  extends: ['@sunbeams'],
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'],
-      parserOptions: {
-        project: './tsconfig.json',
-        tsconfigRootDir: __dirname
-      }
-    }
-  ]
+  extends: ['@cascadeplus'],
+  ignorePatterns: ['**/dist/**/*', '**/node_modules/**/*', '**/coverage/**/*', '.eslintrc.js'],
+  parserOptions: {
+    project: ['./tsconfig.json'],
+    tsconfigRootDir: __dirname
+  }
 }

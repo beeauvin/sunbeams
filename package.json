@@ -2,8 +2,7 @@
   "name": "root",
   "private": true,
   "workspaces": [
-    "sunbeams",
-    "packages/*"
+    "sunbeams"
   ],
   "scripts": {
     "build": "turbo run build",
