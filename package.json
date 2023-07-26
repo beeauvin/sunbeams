@@ -16,7 +16,7 @@
     "sunbeams": "./dist/sunbeams.js"
   },
   "scripts": {
-    "clean": "ts-node tasks/clean",
+    "clean": "cascade clean",
     "prebuild": "npm run clean",
     "build": "tsc -p tsconfig.build.json",
     "start": "node dist/sunbeams",
@@ -59,8 +59,7 @@
     ],
     "coverageDirectory": "./coverage",
     "coveragePathIgnorePatterns": [
-      "/src/sunbeams.ts",
-      "/tasks/"
+      "/src/sunbeams.ts"
     ],
     "testEnvironment": "node",
     "roots": [
