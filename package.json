@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^10.1.1",
-    "nest-commander": "^3.11.0"
+    "nest-commander": "^3.11.1"
   },
   "devDependencies": {
     "@cascadeplus/cascade": "^1.1.0",
