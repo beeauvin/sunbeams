@@ -34,7 +34,7 @@ jobs:
     name: coverage
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: cascadeplus/cascade/.github/actions/install@main
       - run: npm run test:unit
       - uses: codecov/codecov-action@v3
